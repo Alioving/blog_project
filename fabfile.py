@@ -21,6 +21,7 @@ def deploy():
         cd {} &&
         ../env/bin/pip install -r requirements.txt &&
         ../env/bin/python3 manage.py collectstatic --noinput &&
+        ../env/bin/python3 manage.py makemigrations --merge &&
         ../env/bin/python3 manage.py migrate
         """.format(source_folder))
     sudo('restart gunicorn-52qk8.me')
