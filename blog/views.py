@@ -27,6 +27,7 @@ def detail(request, pk):
                                       'markdown.extensions.extra',
                                       'markdown.extensions.codehilite',
                                       'markdown.extensions.toc',
+                                      'markdown.extensions.arithmatex',
                                   ])
     # 记得在顶部导入 CommentForm
     form = CommentForm()
