@@ -66,6 +66,14 @@ class Post(models.Model):
 	# User 是 Django 为我们写好的用户模型
 	# 规定一篇文章只能有一个作者，而一个作者可以写多篇文章，因此是一对多的关联关系，和Category类似
 	author = models.ForeignKey(User)
+
+	# 新增views字段记录阅读量
+	views = models.PositiveIntegerField(default=0)
+
+	def increase_views(self):
+		self.views  += 1
+		self.save(update_fields=['views'])
+		
 	def __str__(self):
 		return self.title
 		
