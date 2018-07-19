@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block main %}
+            {% if error_msg %}
+                <p>{{ error_msg }}</p>
+            {% endif %}
     
 			{% for post in post_list %}
                 <article class="post post-{{ post.pk }}">
@@ -62,4 +65,4 @@
               {% endif %}
             </div>
             {% endif %}
-     {% endblock main %}
+{% endblock main %}

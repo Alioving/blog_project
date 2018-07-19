@@ -16,10 +16,11 @@ env.port = '22'
 def deploy():
     source_folder = '/home/huwenbin/sites/52qk8.me/blog_project'
 
-    run('cd %s && git pull' % source_folder)
+    run('cd %s && git reset --hard && git pull origin master' % source_folder)
     run("""
         cd {} &&
         ../env/bin/pip install -r requirements.txt &&
+        ../env/bin/python3 manage.py rebuild_index
         ../env/bin/python3 manage.py collectstatic --noinput &&
         ../env/bin/python3 manage.py makemigrations --merge &&
         ../env/bin/python3 manage.py migrate

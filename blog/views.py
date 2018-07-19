@@ -5,6 +5,10 @@ from django.http import HttpResponse
 import  markdown
 from comments.forms import CommentForm
 from django.views.generic import ListView, DetailView
+from markdown.extensions.toc import TocExtension
+from django.utils.text import slugify
+from django.db.models import Q
+
 
 #def index(request):
 #	return render(request,'blog/index.html',context={'title':'我的博客首页',
@@ -12,11 +16,24 @@ from django.views.generic import ListView, DetailView
 #	post_list=Post.objects.all().order_by('-created_time')
 #	return render(request,'blog/index.html',context={'post_list':post_list})
 # 把上面的视图函数改造成类视图函数
+def search(request):
+  q = request.GET.get('q')
+  error_msg = ''
+
+  if not q:
+    error_msg = "请输入关键词"
+    return render(request, 'blog/index.html', {'error_msg': error_msg})
+
+  post_list = Post.objects.filter(Q(title__icontains=q) | Q(body__icontains=q))
+  return render(request, 'blog/index.html', {'error_msg': error_msg,
+                                               'post_list': post_list})
+  
+
 class IndexView(ListView):
   model=Post
   template_name='blog/index.html'
   context_object_name='post_list'
-  paginate_by=6
+  paginate_by=10
 
   def get_context_data(self,**kwargs):
     context=super().get_context_data(**kwargs)
@@ -146,8 +163,9 @@ class PostDetailView(DetailView):
   def get_object(self,queryset=None):
     # 覆写 get_object 方法的目的是因为需要对 post 的 body 值进行渲染
     post=super(PostDetailView,self).get_object(queryset=None)
-    post.body=markdown.markdown(post.body,extensions=['markdown.extensions.extra','markdown.extensions.codehilite','markdown.extensions.toc',])
-
+    md=markdown.Markdown(extensions=['markdown.extensions.extra','markdown.extensions.codehilite',TocExtension(slugify=slugify),])
+    post.body=md.convert(post.body)
+    post.toc=md.toc
     return post
 
   def get_context_data(self,**kwargs):
@@ -162,7 +180,8 @@ class PostDetailView(DetailView):
       })
 
     return context
-	
+
+
 	
 
 #def category(request,pk):
