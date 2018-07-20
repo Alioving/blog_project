@@ -1,2 +1,6 @@
 # database
 db.sqlite3
+
+# exec code
+fabfile.py
+fabfile.pyc

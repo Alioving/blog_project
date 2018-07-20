@@ -59,6 +59,9 @@ a:hover, a:focus {
 }
 
 body {
+	background-image: url(../img/background3.jpg);
+	background-size: cover;
+	background-color: #F5F5F5;
     color: #444;
     font-family: 'Lato', sans-serif;
 }
@@ -68,8 +71,31 @@ p {
     font-weight: 400;
     word-spacing: 1px;
     letter-spacing: 0.01em;
+    
 }
 
+.panel {
+	width: 98%;
+	height: 350px;
+	margin-left: 10px;
+	background-color: #F5F5F5;
+}
+.w_carousel .carousel-inner img{
+	width: 100%;
+	height: 350px;
+
+}
+.w_carousel{
+	background-color: #F5F5F5;
+	border-color: #F5F5F5;
+	width: 770px;
+	height: 350px;
+	
+	border: 0px;
+}
+.w_carousel .carousel-inner{
+	background-color: #F5F5F5;
+}
 #single p,
 #page p {
     margin-bottom: 25px;
@@ -104,7 +130,7 @@ img {
  */
 
 #site-header {
-    background-color: #FFF;
+    background-color: #F5F5F5;
     padding: 25px 20px;
     margin-bottom: 40px;
     border-bottom: 1px solid #e7e7e7;
@@ -214,8 +240,10 @@ img {
 }
 
 .post {
-    background: #fff;
+    background: #FFF;
     padding: 30px 30px 0;
+    margin-right: -15px;
+    margin-top: 1px;
 }
 
 .entry-title {
@@ -336,8 +364,11 @@ img {
  */
 
 .widget {
-    background: #fff;
-    padding: 30px 0 0;
+    background: #FFF;
+    padding: 20px 5px 5px;
+    margin: 1px;
+
+
 }
 
 .widget-title {
@@ -349,8 +380,8 @@ img {
 }
 
 .widget-recent-posts ul {
-    padding: 0;
-    margin: 0;
+    padding: 5;
+    margin: 5;
     padding-left: 20px;
 }
 
@@ -369,6 +400,10 @@ img {
     top: 3px;
     font-size: 16px;
     color: #000;
+}
+.widget-archives {
+	margin-top: 8px
+
 }
 
 .widget-archives ul {
@@ -394,6 +429,9 @@ img {
     color: #000;
 }
 
+.widget-category{
+	margin-top: 8px;
+}
 .widget-category ul {
     padding: 0;
     margin: 0;
@@ -417,6 +455,9 @@ img {
     color: #000;
 }
 
+.widget-tag-cloud{
+	margin-top: 8px;
+}
 .widget-tag-cloud ul {
     padding: 0;
     margin: 0;
