@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Black &amp; White</title>
+    <title>於彬 &amp; Blog</title>
         <style>
             span.highlighted {
                 color: red;
@@ -37,7 +37,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-5 col-xs-8">
                 <div class="logo">
-                    <h1><a href="{% url 'blog:index' %}"><b>52QK8</b> </a></h1>
+                    <h1><a href="{% url 'blog:index' %}"><b>於彬个人博客</b> </a></h1>
                 </div>
             </div><!-- col-md-4 -->
             <div class="col-md-8 col-sm-7 col-xs-4">
@@ -51,10 +51,10 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             
-							<li class="cl-effect-11"><a href="{% url 'blog:index' %}">首页</a></li>
-                            <li class="cl-effect-11"><a href="full-width.html" data-hover="博客">博客</a></li>
-                            <li class="cl-effect-11"><a href="about.html" data-hover="关于">关于</a></li>
-                            <li class="cl-effect-11"><a href="contact.html" data-hover="联系">联系</a></li>
+							<li class="cl-effect-11"><a href="{% url 'blog:index' %}"><p style="color: rgb(0,255,255);">首页</p></a></li>
+                            <li class="cl-effect-11"><a href="full-width.html" data-hover="博客"><p style="color: rgb(0,255,255);">博客</p></a></li>
+                            <li class="cl-effect-11"><a href="about.html" data-hover="关于"><p style="color: rgb(0,255,255);">关于</p></a></li>
+                            <li class="cl-effect-11"><a href="contact.html" data-hover="联系"><p style="color: rgb(0,255,255);">联系</p></a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -62,7 +62,7 @@
                     <a id="search-menu" href="#"><span id="search-icon" class="ion-ios-search-strong"></span></a>
                     <div id="search-form" class="search-form">
                         <form role="search" method="get" id="searchform" action="{% url 'haystack_search' %}">
-                            <input type="search" placeholder="搜索" required>
+                            <input  type="search" placeholder="search" required>
                             <button type="submit"><span class="ion-ios-search-strong"></span></button>
                         </form>
                     </div>
@@ -79,7 +79,7 @@
     <div class="container">
         <div class="row">
             <!--滚动图开始-->
-            <div class="panel panel-default">
+            <div class="panel1">
 
                 <div id="w_carousel" class="carousel slide w_carousel" data-ride="carousel">
                 <!-- Indicators -->
@@ -125,6 +125,15 @@
                 </div>
 
             </div>
+			<div class="panel2">
+				
+					<strong>站点公告</strong>
+					<h3 class="title">来了，就干了这碗毒鸡汤，</h3>
+					<p class="overView">习惯正一天天地把我们的生命变成某种定型的化石，我们的心灵正在失去自由，成为平静而没有激情的时间之流的奴隶。</p>
+                    <p class="overView">播下行为的种子，可以收成习惯之果；播下习惯的种子，可以收成性格之果；播下性格的种子，可以收成命运之果。</p>
+                    <p class="overView">一份耕耘，一份收获。</p>
+				
+			</div>
             <main class="col-md-8">
 				{% block main %}
 				{% endblock main %}
