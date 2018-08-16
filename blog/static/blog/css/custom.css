@@ -283,7 +283,9 @@ img {
 .content-body {
     padding-bottom: 4em;
 }
-
+.clc{
+	clear: both
+}
 .post {
     background: #FFF;
     padding: 30px 30px 0;

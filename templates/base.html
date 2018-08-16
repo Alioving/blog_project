@@ -37,7 +37,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-5 col-xs-8">
                 <div class="logo">
-                    <h1><a href="{% url 'blog:index' %}"><b>於彬个人博客</b> </a></h1>
+                    <h1><a href="{% url 'blog:index' %}"><b>於彬--个人博客</b> </a></h1>
                 </div>
             </div><!-- col-md-4 -->
             <div class="col-md-8 col-sm-7 col-xs-4">
@@ -73,7 +73,7 @@
 </div>
 
 <div class="copyrights">Collect from <a href="http://www.cssmoban.com/">网页模板</a></div>
-<div class="copyrights">Modified by <a href="http://zmrenwu.com/">追梦人物的博客</a></div>
+
 
 <div class="content-body">
     <div class="container">
@@ -134,10 +134,12 @@
                     <p class="overView">一份耕耘，一份收获。</p>
 				
 			</div>
-            <main class="col-md-8">
+            <div class="clc">
+		<main class="col-md-8">
 				{% block main %}
 				{% endblock main %}
-            </main>
+               </main>
+	   </div>
             <aside class="col-md-4">
 				{% block toc %}
 				{% endblock toc %}
@@ -206,9 +208,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p class="copyright">&copy 2017 - 采集自<a href="http://www.cssmoban.com/"
+                <p class="copyright">&copy 2018 - 采集自<a href="http://www.cssmoban.com/"
                                                         target="_blank" title="模板之家">模板之家</a>
-                    - 由<a href="http://zmrenwu.com/" title="网页模板" target="_blank">追梦人物的博客</a>修改
+                    - 由<a href="http://52qk8.me/" title="网页模板" target="_blank">於彬的个人博客</a>修改
                 </p>
             </div>
         </div>
